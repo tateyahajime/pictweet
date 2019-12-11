@@ -1,0 +1,11 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <% @tweets.each do |tweet| %>
+    <%= render partial: "tweets/tweet", locals: { tweet: tweet } %>
+    <%# <div class="content_post" style="background-image: url(<%= tweet.image %>);"> %>
+      <%# <%= simple_format(tweet.text) %> %>
+      <%# これで、tweetsテーブルのnameカラムを削除したため、users/show.html.erbのtweet.nameとしている部分でエラーが発生してしまいます。この文を削除しましょう。%>
+      <%# <span class="name"><%= tweet.name</span> %> %>
+    <%# </div> %>
+  <% end %>
+</div>
